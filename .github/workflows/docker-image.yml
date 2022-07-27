@@ -17,5 +17,8 @@ jobs:
     - name: Build the Docker image
       run: ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=book:latest
      
-    - name: Push the Docker image
-      run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} && docker push book:latest
+    - name: Login docker
+      run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} 
+      
+    - name: Push the  docker image
+      run: docker push book:latest
