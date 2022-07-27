@@ -54,10 +54,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-    <inherited>true</inherited>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>              
-</plugin>
+				<inherited>true</inherited>
+    				<groupId>org.apache.maven.plugins</groupId>
+    				<artifactId>maven-compiler-plugin</artifactId>  
+				<version>3.10.1</version>
+                		<configuration>
+                    			<release>17</source>
+                		</configuration>
+			</plugin>
 			
 		</plugins>
 	</build>
