@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag book:latest
+      run: ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=book:latest
+      #run: docker build . --file Dockerfile --tag book:latest
     - name: Push the Docker image
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} && docker push book:latest
