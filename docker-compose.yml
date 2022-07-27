@@ -1,0 +1,24 @@
+version: "3"
+services:
+ my_app_book:
+  image: newbook
+  restart: always
+  ports: 
+    - 8080:8080
+  depends_on:
+    - db
+  networks:
+   - docker_l
+ db:
+  image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
+  ports:
+   - 9200:9200
+  environment:
+   - discovery.type=single-node
+  networks:
+   - docker_l
+   
+networks:
+ docker_l:
+  driver: bridge
+    

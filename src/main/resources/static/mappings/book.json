@@ -1,0 +1,17 @@
+{
+	"properties" : {
+		"id" : {
+			"type" : "keyword"
+		},
+		"bookname" : {
+			"type" : "text"
+		},
+		"name" : {
+			"type" : "text"
+		},
+		"created" : {
+			"type" : "date"
+			
+		}
+	}
+}
