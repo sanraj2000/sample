@@ -14,8 +14,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
     - name: Build the Docker image
-      run: ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=book:latest
+      run: docker build . --file Dockerfile --tag book:latest
      
     - name: Login docker
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} 
