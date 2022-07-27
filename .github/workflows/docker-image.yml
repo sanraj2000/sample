@@ -14,8 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Cleaning
-      run: ./mvnw clean
+   # - name: Cleaning
+    #  run: ./mvnw clean
     - name: Build the Docker image
       run: ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=book:latest
      
