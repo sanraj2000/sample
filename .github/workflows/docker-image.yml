@@ -17,10 +17,10 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag book:latest
+      run: docker build . --file Dockerfile --tag test/book:latest
      
     - name: Login docker
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} 
       
     - name: Push the  docker image
-      run: docker push book:latest
+      run: docker push test/book:latest
