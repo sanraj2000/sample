@@ -28,4 +28,4 @@ jobs:
    
       
     - name: Push the  docker image
-      run: docker push sanraj2000/test/book:latest
+      run: docker push sanraj2000/book:latest
