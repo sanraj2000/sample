@@ -37,4 +37,4 @@ jobs:
       
    
     - name: Test
-      run: docker run  appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8081/
+      run: docker run  sanraj2000/book -s --retry 10 --retry-connrefused http://localhost:8081/
