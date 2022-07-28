@@ -34,3 +34,7 @@ jobs:
       
     - name: Check the running container
       run: docker ps
+      
+   
+    - name: Test
+      run: docker run  appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8081/
