@@ -82,10 +82,10 @@ public class BookController {
     }
     
     
-    @GetMapping("/author/{aname}")
+   /* @GetMapping("/author/{aname}")
     public List<Book> getByAuthor(@PathVariable String aname){
     	return service.getByAuthor(aname);
-    }
+    }*/
     
     
     @ResponseBody
