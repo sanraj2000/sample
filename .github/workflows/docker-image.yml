@@ -32,3 +32,6 @@ jobs:
       
     - name: Build the stack
       run: docker-compose up -d
+      
+    - name: Check the running container
+      run: docker ps
