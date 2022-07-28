@@ -1,7 +1,7 @@
 version: "3"
 services:
  my_app_book:
-  image: newbook
+  image: sanraj2000/book
   restart: always
   ports: 
     - 8080:8080
