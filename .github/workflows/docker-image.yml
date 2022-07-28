@@ -36,7 +36,7 @@ jobs:
       run: docker ps
       
     - name: Run a container
-      run: docker run --rm -f sanraj2000/book:latest
+      run: docker run --rm -T sanraj2000/book:latest
       
    
     
