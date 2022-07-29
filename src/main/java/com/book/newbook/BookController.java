@@ -56,7 +56,11 @@ public class BookController {
     public List<Book> search(@RequestBody final SearchRequestDTO dto) {
         return service.search(dto);
     }
-    
+	
+    @GetMapping("/sample")
+    public void sample(){
+	System.out.println("Welcome to springboot+elasticsearch+docker");    
+    }
     
     @GetMapping("/book/search/{date}")
     public List<Book> getAllBookCreatedSince(
