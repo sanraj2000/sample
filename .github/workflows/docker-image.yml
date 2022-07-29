@@ -37,3 +37,6 @@ jobs:
       
     - name: All the containers
       run: docker ps -a
+      
+    - name: localhost hit
+      run: curl http://localhost:8080/api
