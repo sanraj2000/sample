@@ -47,19 +47,16 @@ jobs:
           
     - name: Checking Post1
       run: |
-           sleep 60
            curl -X POST -H "Content-Type: application/json" \
                -d '{"id": "1", "bookname": "Ponniyin Selvan", "name": "Kalki", "created": "1954-05-16" }'\
                http://localhost:8080/api/add  
           
     - name: Checking Post2
       run: |
-           sleep 60
            curl -X POST -H "Content-Type: application/json" \
                -d '{"id": "6", "bookname": "The Alchemist", "name": "Paulo Coelho", "created": "1988-05-16" }'\
                http://localhost:8080/api/add
            
     - name: Checking
       run: |
-           sleep 60
            curl -X GET http://localhost:8080/api
