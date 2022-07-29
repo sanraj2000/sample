@@ -42,12 +42,16 @@ jobs:
       run: |
           sleep 60
           curl -X GET http://localhost:9200/
+      
+   
           
-    - name: Checking springboot
+    - name: Checking Post
       run: |
            sleep 60
-           curl -X GET http://localhost:8080/api/sample
-          
+           curl -X POST -H "Content-Type: application/json" \
+               -d '{"id": "6", "bookname": "The Alchemist", "name": "Paulo Coelho", "created": "1988-05-16" }'\
+               http://localhost:8080/api/book
+           
     - name: Checking
       run: |
            sleep 60
