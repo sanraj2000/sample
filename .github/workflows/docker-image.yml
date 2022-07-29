@@ -34,3 +34,6 @@ jobs:
       
     - name: Check the running container
       run: docker ps
+      
+    - name: All the containers
+      run: docker ps -a
