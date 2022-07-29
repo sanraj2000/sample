@@ -54,7 +54,6 @@ jobs:
           
     - name: Checking Post2
       run: |
-           sleep 60
            curl -X POST -H "Content-Type: application/json" \
                -d '{"id": "6", "bookname": "The Alchemist", "name": "Paulo Coelho", "created": "1988-05-16" }'\
                http://localhost:8080/api/add 
@@ -64,8 +63,13 @@ jobs:
            curl -X POST -H "Content-Type: application/json" \
                -d '{"id": "2", "bookname": "Shivagamiyin Sapatham", "name": "kalki", "created": "1960-08-1" }'\
                http://localhost:8080/api/add
+          
+    - name: Checking Post4
+      run: |
+           curl -X POST -H "Content-Type: application/json" \
+               -d '{"id": "3", "bookname": "Kadal pura", "name": "Sandiliyan", "created": "1974-08-25" }'\
+               http://localhost:8080/api/add
            
     - name: Checking GetAll
       run: |
-           sleep 60
            curl -X GET http://localhost:8080/api
