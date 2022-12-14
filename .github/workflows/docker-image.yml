@@ -19,6 +19,7 @@ jobs:
       
     - name: Project folder
       run: pwd
+     
     
     - name: Login docker
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} docker.io
@@ -43,7 +44,8 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+       # tags: ${{ steps.meta.outputs.tags }}
+        tags:  $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
         labels: ${{ steps.meta.outputs.labels }}
       
     - name: Build the stack
