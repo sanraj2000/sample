@@ -47,7 +47,7 @@ jobs:
         push: true
        # tags: ${{ steps.meta.outputs.tags }}
         #tags:  $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        tags: ${{ steps.action.outputs.number }}
+        tags: ${{ github.event.number }}
         labels: ${{ steps.meta.outputs.labels }}
       
     - name: Build the stack
