@@ -44,8 +44,10 @@ jobs:
       uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
       with:
         context: .
-        push: true
-        tags: ${{ github.event.number }}
+        push: true 
+        tags: ${{ steps.meta.outputs.tags }}
+        #tags:  $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+       # tags: ${{ github.event.number }}
         labels: ${{ steps.meta.outputs.labels }}
       
     - name: Build the stack
