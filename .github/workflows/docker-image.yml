@@ -22,6 +22,7 @@ jobs:
       run: | 
        pwd
        echo  ${{github.event.pull_request.number}}
+       echo  ${{ github.event.number }}
     
     - name: Login docker
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} docker.io
