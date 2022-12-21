@@ -19,8 +19,9 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: Project folder
-      run: pwd
-     
+      run: |
+       pwd
+       ${{ steps.meta.outputs.tags }}
     
     - name: Login docker
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} docker.io
@@ -34,11 +35,11 @@ jobs:
   #  - name: Push the  docker image
    #   run: docker push sanraj2000/book:latest
       
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-      with:
-          images: sanraj2000/test_repo
+   # - name: Extract metadata (tags, labels) for Docker
+    #  id: meta
+     # uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+     # with:
+       #   images: sanraj2000/test_repo
       
     - name: Build and push Docker image
       uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
