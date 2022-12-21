@@ -5,9 +5,6 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-    
-env:
-  GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}    
 
 jobs:
 
@@ -23,7 +20,8 @@ jobs:
       
     - name: Project folder
       run: | 
-       echo "$GITHUB_PR_NUMBER"
+       pwd
+       echo  ${{github.event.pull_request.number}}
     
     - name: Login docker
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} docker.io
