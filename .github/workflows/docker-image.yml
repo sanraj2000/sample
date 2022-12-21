@@ -25,27 +25,29 @@ jobs:
     - name: Login docker
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} docker.io
     
-   # - name: Build the Docker image
-    #  run: docker build -t sanraj2000/book:latest -f Dockerfile .
+    - name: Build the Docker image
+      run: docker build -t sanraj2000/book:${{ steps.meta.outputs.tags }} -f Dockerfile .
       
      
    
       
-  #  - name: Push the  docker image
-   #   run: docker push sanraj2000/book:latest
+    - name: Push the  docker image
+      run: docker push sanraj2000/book:${{ steps.meta.outputs.tags }}
       
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-      with:
-          images: sanraj2000/test_repo
+    #- name: Extract metadata (tags, labels) for Docker
+     # id: meta
+     # uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+     # with:
+     #     images: sanraj2000/test_repo
       
-    - name: Build and push Docker image
-      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-      with:
-        context: .
-        push: true 
-        tags: ${{ steps.meta.outputs.tags }}
+    #- name: Build and push Docker image
+     # uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      #with:
+       # context: .
+       # push: true 
+       # tags: ${{ steps.meta.outputs.tags }}
+        
+        
         #tags:  $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
        # tags: ${{ github.event.number }}
        # labels: ${{ steps.meta.outputs.labels }}
