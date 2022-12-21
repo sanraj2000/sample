@@ -19,8 +19,9 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: Project folder
-      run: pwd
-     
+      run: | 
+       pwd
+       echo ${{ steps.meta.outputs.tags }}
     
     - name: Login docker
       run: docker login -u sanraj2000 -p ${{ secrets.DOCKER_TOKEN }} docker.io
