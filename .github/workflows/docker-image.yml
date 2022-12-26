@@ -12,6 +12,8 @@ jobs:
 
     steps:
    # - uses: kamatama41/get-pr-number-action@v0
+    - name: sudo
+      run: sudo sysctl -w vm.max_map_count=262144
     - uses: actions/checkout@v3
     - name: Build with Maven
       run: mvn -B package --file pom.xml
