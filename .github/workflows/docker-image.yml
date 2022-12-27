@@ -5,7 +5,13 @@ on:
     branches: [ "master" ]
     
 env:
-  BRANCH_NAME: master    
+  BRANCH_NAME: master 
+  TEST: >
+   ${{ fromJson('{
+      "master": "hi",
+      "sanraj2000-patch-1": "hi branch"
+    }')[github.event.sanraj2000-patch-1] }}
+  
 
 jobs:
 
@@ -15,6 +21,11 @@ jobs:
 
     steps:
    # - uses: kamatama41/get-pr-number-action@v0
+    - name: Check json
+      run: |
+       echo ${{ env.TEST }}
+       echo $TEST
+     
     - name: Merge aginst master
       if: github.event.pull_request.base.ref == ${{ env.BRANCH_NAME }}
       run: echo  $BRANCH_NAME
