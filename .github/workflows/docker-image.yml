@@ -8,7 +8,7 @@ env:
   BRANCH_NAME: master 
   TEST: >
    ${{ fromJson('{
-      "master": "hi",
+      "master": "11.00",
       "sanraj2000-patch-1": "hi branch"
     }')[github.event.pull_request.base.ref] }}
   
