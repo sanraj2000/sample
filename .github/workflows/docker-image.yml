@@ -3,6 +3,9 @@ name: Docker Image CI
 on:
   pull_request:
     branches: [ "master" ]
+    
+env:
+  BRANCH_NAME: master    
 
 jobs:
 
@@ -13,8 +16,8 @@ jobs:
     steps:
    # - uses: kamatama41/get-pr-number-action@v0
     - name: Merge aginst master
-      if: github.event.pull_request.base.ref == 'master'
-      run: echo  ${{ github.event.number }}
+      if: github.event.pull_request.base.ref == $BRANCH_NAME
+      run: echo  $BRANCH_NAME
     
     - name: Merge against sanraj2000-patch-1
       if: github.event.pull_request.base.ref == 'sanraj2000-patch-1'
