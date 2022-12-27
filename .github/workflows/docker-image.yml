@@ -14,7 +14,7 @@ jobs:
    # - uses: kamatama41/get-pr-number-action@v0
     - name: Merge aginst master
       if: github.event.pull_request.base.ref == 'master'
-      run: echo master
+      run: echo  ${{ github.event.number }}
     
     - name: Merge against sanraj2000-patch-1
       if: github.event.pull_request.base.ref == 'sanraj2000-patch-1'
