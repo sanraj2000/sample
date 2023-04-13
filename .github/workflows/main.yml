@@ -1,0 +1,28 @@
+name: checking variables
+
+on:
+ workflow_dispatch:
+
+  
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking
+        id: var
+        run: |
+          UUID=$(uuidgen)
+          echo $UUID
+          UUIDDDD==$(uuidgen)
+          echo "pr_title=$UUIDDDD" >> $GITHUB_OUTPUT
+      
+      - name: Checking 2
+        run: |
+          echo $UUID
+          echo ${{ steps.vars.outputs.pr_title }}
+          
+          
+          
