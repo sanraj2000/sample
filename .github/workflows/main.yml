@@ -18,7 +18,7 @@ jobs:
           echo $UUID
           UUIDDDD==$(uuidgen)
           echo "pr_title=$UUIDDDD" >> $GITHUB_OUTPUT
-          echo "PR_TITLE=$UUIDDDD >> $GITHUB_ENV
+          echo "PR_TITLE=$UUIDDDD" >> $GITHUB_ENV
       
       - name: Checking 2
         run: |
