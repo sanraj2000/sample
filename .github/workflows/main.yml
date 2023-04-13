@@ -17,6 +17,7 @@ jobs:
           UUID=$(uuidgen)
           echo $UUID
           UUIDDDD=$(uuidgen)
+          echo $UUIDDDD
           echo "pr_title=$UUIDDDD" >> $GITHUB_OUTPUT
           echo "PR_TITLE=$UUIDDDD" >> $GITHUB_ENV
       
