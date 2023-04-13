@@ -16,7 +16,7 @@ jobs:
         run: |
           UUID=$(uuidgen)
           echo $UUID
-          UUIDDDD==$(uuidgen)
+          UUIDDDD=$(uuidgen)
           echo "pr_title=$UUIDDDD" >> $GITHUB_OUTPUT
           echo "PR_TITLE=$UUIDDDD" >> $GITHUB_ENV
       
